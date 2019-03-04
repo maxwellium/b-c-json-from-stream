@@ -1,7 +1,7 @@
 import { Readable } from 'stream';
 
 // once Async Iteration is stable:
-/*export async function toJson( req: Readable, encoding = 'utf8' ) {
+/*export async function jsonFromStream( req: Readable, encoding = 'utf8' ) {
   req.setEncoding( encoding );
 
   let data = '';
@@ -13,7 +13,7 @@ import { Readable } from 'stream';
   return JSON.parse( data );
 }*/
 
-export function toJson( req: Readable, encoding = 'utf8' ) {
+export function jsonFromStream( req: Readable, encoding = 'utf8' ) {
 
   req.setEncoding( encoding );
 

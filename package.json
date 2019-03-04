@@ -7,6 +7,7 @@
   "files": [
     "build/src"
   ],
+  "repository": "github:maxwellium/b-c-json-from-stream",
   "license": "MIT",
   "author": "maxwellium",
   "keywords": [],
