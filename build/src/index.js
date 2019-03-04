@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 // once Async Iteration is stable:
-/*export async function toJson( req: Readable, encoding = 'utf8' ) {
+/*export async function jsonFromStream( req: Readable, encoding = 'utf8' ) {
   req.setEncoding( encoding );
 
   let data = '';
@@ -12,7 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 
   return JSON.parse( data );
 }*/
-function toJson(req, encoding = 'utf8') {
+function jsonFromStream(req, encoding = 'utf8') {
     req.setEncoding(encoding);
     return new Promise((resolve, reject) => {
         let data = '';
@@ -21,5 +21,5 @@ function toJson(req, encoding = 'utf8') {
         req.on('end', () => resolve(JSON.parse(data)));
     });
 }
-exports.toJson = toJson;
+exports.jsonFromStream = jsonFromStream;
 //# sourceMappingURL=index.js.map
