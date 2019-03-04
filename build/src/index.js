@@ -18,7 +18,14 @@ function jsonFromStream(req, encoding = 'utf8') {
         let data = '';
         req.on('error', reject);
         req.on('data', chunk => data += chunk);
-        req.on('end', () => resolve(JSON.parse(data)));
+        req.on('end', () => {
+            try {
+                resolve(JSON.parse(data));
+            }
+            catch (e) {
+                reject(e);
+            }
+        });
     });
 }
 exports.jsonFromStream = jsonFromStream;

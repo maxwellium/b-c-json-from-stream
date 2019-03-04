@@ -23,7 +23,13 @@ export function jsonFromStream( req: Readable, encoding = 'utf8' ) {
 
     req.on( 'error', reject );
     req.on( 'data', chunk => data += chunk );
-    req.on( 'end', () => resolve( JSON.parse( data ) ) );
+    req.on( 'end', () => {
+      try {
+        resolve( JSON.parse( data ) );
+      } catch ( e ) {
+        reject( e );
+      }
+    } );
 
   } );
 }
