@@ -1,6 +1,6 @@
 {
   "name": "@b-c/json-from-stream",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "description": "Readable to Promise<JSON.stringify>",
   "main": "build/src/index.js",
   "types": "build/src/index.d.ts",
