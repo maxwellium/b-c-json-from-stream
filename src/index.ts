@@ -1,19 +1,7 @@
 import { Readable } from 'stream';
 
-// once Async Iteration is stable:
-/*export async function jsonFromStream( req: Readable, encoding = 'utf8' ) {
-  req.setEncoding( encoding );
 
-  let data = '';
-
-  for await ( const chunk of req ) {
-    data += chunk;
-  }
-
-  return JSON.parse( data );
-}*/
-
-export function jsonFromStream( req: Readable, encoding = 'utf8' ) {
+export function jsonFromStream<T>( req: Readable, encoding = 'utf8' ): Promise<T> {
 
   req.setEncoding( encoding );
 
